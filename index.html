@@ -1,5 +1,9 @@
 <html lang="en">
 <head>
+ 
+<!-- DC Payment Icons CSS -->
+<link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/payment_icons/dc_payment_icons.css" />
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,7 +97,7 @@
 
         margin-top: 10px;
      margin-left: 10px;
-	font-size: 20
+	font-size: 20px;
 	
 	}
 	
@@ -111,13 +115,24 @@
 	.temp-container input:focus {
     outline: 0;
 	}
+	.payment {
+	 display: flex;
+    flex-direction: row;
+    
+	}
+	.p {
+	      margin-top: 10px;
+     margin-left: 10px;
+	font-size: 10px;
+	
+	}
 
     </style>
 </head>
 <body>
     <div class="container1">
 
-        <form id="form" action="https://formspree.io/f/xgebwded" method="POST">
+        <form id="form" action="https://www.google.com" method="">
 <div class="sec">
             <div class="input-control">
 <img class="img" src="image/pic.png">
@@ -135,13 +150,22 @@
 <label class="label" for="oldpassword">Large amount supported</label>
 </div>
 </div>
-  <img class="imge" src="image/pic6.png">
+                 <div class="payment">
+
+        <p class="p"for="">payment method</p>
+
+ <span class="dc_payment_icons_smini_32 dc_visa_smini" title="Visa"></span>
+<span class="dc_payment_icons_smini_32 dc_mastercard_alt_smini" title="Mastercard"></span>
+<span class="dc_payment_icons_smini_32 dc_mastercard_smini" title="Mastercard"></span>
+<span class="dc_payment_icons_smini_32 dc_amex_smini" title="American Express"></span>
+<span class="dc_payment_icons_smini_32 dc_paypal_smini" title="PayPal"></span>
+</div>
 
   <div class="temp-container">
         <label class="label1"for="kelvin">Total:$</label>
         <input
           onchange="computeTemp(event)"
-          type="number"
+          type=""
          
           id="kelvin"
           
@@ -158,7 +182,7 @@
         
         <input
           onchange="computeTemp(event)"
-          type="number"
+          type=""
           name="celsius"
           id="celsius"
           class="input3"
