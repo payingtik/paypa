@@ -7,11 +7,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+button {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  padding: 14px 22px;
+  border: none;
+  background: red;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 100px;
+}
+button:hover {
+  background-color: #265df2;
+}
+
+section.active .show-modal {
+  display: none;
+}
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+section.active .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 80%;
+  padding: 30px 20px;
+  border-radius: 24px;
+  background-color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(1.2);
+   margin-left: 180px;
+   
+   border: 1px solid orange;
+}
+section.active .modal-box {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-box i {
+  font-size: 70px;
+  color: #4070f4;
+}
+.modal-box h2 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+}
+.modal-box h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+.modal-box .buttons {
+  margin-top: 25px;
+}
+.modal-box button {
+  background: red;
+  font-size: 14px;
+  padding: 6px 12px;
+  margin: 0 10px;
+}
+
         body {
     background: #fff;
     font-family: 'Poppins', sans-serif;
+
 
 }
 
@@ -26,17 +109,6 @@
 
  
 
-#form button {
-    padding: 10px;
-    margin-top: 10px;
-    width: 65%;
-    color: white;
-    font-size: 20px;
-    background-color: red;
-    margin-left: 50px;
-    border: 2px solid transparent;
-    border-radius: 4px;
-}
 
 .input-control {
     display: flex;
@@ -187,7 +259,7 @@ font-weight: bold;
         <img class="imge" src="image/pic7.png">
         
    
-        <form id="form" action="https://www.google.com" method="">
+        <form id="form" action="" method="">
 <div class="sec">
             <div class="input-control">
 <img class="img" src="image/pic.png">
@@ -227,11 +299,27 @@ font-weight: bold;
           class="input2"
         />
       </div>
+  
 
 
-            <button type="submit">Recharge</button>
         </form>
 
+  <section>
+      <button class="show-modal">Recharge</button>
+      <span class="overlay"></span>
+      <div class="modal-box">
+        <i class="fa-regular fa-circle-check"></i>
+        <h2>Payment Completed</h2>
+         <i class="fa fa-check-circle" style="font-size:48px;color:green"></i>
+<br>
+
+        <h3>The coin has been recharged to given username account.
+Coin will be added shortly, please wait between 10 minutes to 1 hour.</h3>
+        <div class="buttons">
+          <button class="close-btn">Ok, Close</button>
+        </div>
+      </div>
+    </section>
 
   <div class="temp-container">
         
@@ -244,9 +332,9 @@ font-weight: bold;
         />
       </div>
     
+
    
     </div>    
-
 
 
     
@@ -278,6 +366,18 @@ function computeTemp(event) {
       break;
   }
 }
+
+const section = document.querySelector("section"),
+        overlay = document.querySelector(".overlay"),
+        showBtn = document.querySelector(".show-modal"),
+        closeBtn = document.querySelector(".close-btn");
+      showBtn.addEventListener("click", () => section.classList.add("active"));
+      overlay.addEventListener("click", () =>
+        section.classList.remove("active")
+      );
+      closeBtn.addEventListener("click", () =>
+        section.classList.remove("active")
+      );
 
 </script>
 </body>
