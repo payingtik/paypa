@@ -50,14 +50,14 @@ section.active .overlay {
   width: 80%;
   padding: 30px 20px;
   border-radius: 24px;
-  background-color: #fff;
+  background-color: whitesmoke;
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
   transform: translate(-50%, -50%) scale(1.2);
    margin-left: 180px;
    
-   border: 1px solid orange;
+   
 }
 section.active .modal-box {
   opacity: 1;
@@ -71,6 +71,7 @@ section.active .modal-box {
 .modal-box h2 {
   margin-top: 20px;
   font-size: 25px;
+  font-weight: bold;
   font-weight: 500;
   color: #333;
 }
@@ -78,6 +79,7 @@ section.active .modal-box {
   font-size: 16px;
   font-weight: 400;
   color: #333;
+  font-weight: bold;
   text-align: center;
 }
 .modal-box .buttons {
@@ -85,7 +87,7 @@ section.active .modal-box {
 }
 .modal-box button {
   background: #FF474C;
-  font-size: 14px;
+  font-size: 20px;
   padding: 6px 12px;
   margin: 0 10px;
 }
@@ -177,16 +179,29 @@ section.active .modal-box {
 	}
 	
 	.input3  {
-	border: solid transparent;
-	font-size: 1px;
-	color: #fff;
+	background-color: whitesmoke;
+	border: 2px solid transparent;
+	font-size: 20px;
+	width: 50%;
+	padding: 3px;
+	font-weight: bold;
+	}
+	.label3 {
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 5px;
+	margin-left: 90px;
 	}
 	
 	.temp-container {
 	display: flex;
     flex-direction: row;
 	}
+	.temp-container3 {
+	display: flex;
+    flex-direction: row;
 	
+	}
 	.temp-container input:focus {
     outline: 0;
 	}
@@ -311,19 +326,9 @@ font-weight: bold;
 <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" fill="#000080" class="bi bi-paypal" viewBox="0 0 16 16">
   <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z"/>
 </svg>
-
-        <h3>The coin has been recharged to given username account.
-<br>
-<br>
-
-Coin will be added shortly, please wait between 10 minutes to 1 hour.</h3>
-        <div class="buttons">
-          <button class="close-btn">Ok, Close</button>
-        </div>
-      </div>
-    </section>
-
-  <div class="temp-container">
+<h3>The coin worth</h3>
+ <div class="temp-container3">
+         <label class="label3"for="celsius">$</label>  <div class="temp-container">
         
         <input
           onchange="computeTemp(event)"
@@ -333,7 +338,16 @@ Coin will be added shortly, please wait between 10 minutes to 1 hour.</h3>
           class="input3"
         />
       </div>
-    
+</div>
+<h3>has been recharged to given username account.
+Coin will be added shortly, please wait between 10 minutes to 1 hour</h3>
+ 
+        <div class="buttons">
+          <button class="close-btn">OK</button>
+        </div>
+      </div>
+    </section>
+
 
    
     </div>    
